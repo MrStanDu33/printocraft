@@ -1,0 +1,5 @@
+name: printocraft
+version: 1.0
+author: mrstandu33
+depend: [WorldEdit]
+main: fr.mrstandu33.printocraft.printocraft
