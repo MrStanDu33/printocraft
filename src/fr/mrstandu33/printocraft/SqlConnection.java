@@ -10,6 +10,15 @@ public class SqlConnection {
 
 	private Connection connection;
 	private String urlbase,user,pass;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 	
 	public SqlConnection(String urlbase, String user, String pass)
 	{
@@ -25,11 +34,11 @@ public class SqlConnection {
 			try
 			{
 				connection = DriverManager.getConnection(urlbase, user, pass);
-				System.out.println("Connected to the database");
+				System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN + " O'" + ANSI_GREEN + " Craft" + ANSI_RESET + "]Connected to the database");
 			}
 			catch (SQLException e)
 			{
-				System.out.println("Cannot connect to the database");
+				System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN + " O'" + ANSI_GREEN + " Craft" + ANSI_RESET + "]Cannot connect to the database");
 				e.printStackTrace();
 			}
 		}
@@ -42,11 +51,11 @@ public class SqlConnection {
 			try
 			{
 				connection.close();
-				System.out.println("Disonnected to the database");
+				System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN + " O'" + ANSI_GREEN + " Craft" + ANSI_RESET + "]Disonnected to the database");
 			}
 			catch (SQLException e)
 			{
-				System.out.println("Cannot disconnect to the database");
+				System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN + " O'" + ANSI_GREEN + " Craft" + ANSI_RESET + "]Cannot disconnect to the database");
 				e.printStackTrace();
 			}
 		}
