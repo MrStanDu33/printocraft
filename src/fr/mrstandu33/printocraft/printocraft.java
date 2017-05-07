@@ -65,7 +65,7 @@ public class printocraft extends JavaPlugin implements Listener
 		    }
 		}, 20, 1200);
 
-		getCommand("Poc reload").setExecutor(new Commands());
+		getCommand("poc").setExecutor(new Commands());
 	}
 	//___________________________________________________________________________________________________
 	public void core()
