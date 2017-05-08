@@ -30,7 +30,7 @@ public class Commands implements CommandExecutor {
                         Plugin plugin = p.getServer().getPluginManager().getPlugin("printocraft");
                         p.getServer().getPluginManager().disablePlugin(plugin);
                         p.getServer().getPluginManager().enablePlugin(plugin);
-                        p.sendMessage(ChatColor.GREEN+"Plugin Reload");
+                        p.sendMessage(ChatColor.DARK_GREEN+"Serveur"+ChatColor.DARK_RED+"Print O' Craft reloaded successful");
 
                     }
 
