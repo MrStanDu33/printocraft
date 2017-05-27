@@ -12,6 +12,10 @@ public class Commands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender Sender, Command prompt, String message, String[] args) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d5e2d65866c39fbd714d575a491806d7549a16d5
     	if (Sender instanceof Player)
     	{
     		Player p = (Player)Sender;
@@ -55,5 +59,40 @@ public class Commands implements CommandExecutor {
     			}
     	}
        	return false;
+<<<<<<< HEAD
+=======
+=======
+
+        if (Sender instanceof Player){
+            Player p = (Player)Sender;
+
+            if (prompt.getName().equalsIgnoreCase("poc")){
+
+                if (args.length == 0) {
+                    if (p.hasPermission("poc.reload") && p.isOp()) {
+                        p.sendMessage("/poc reload : Pour reload Print o' Craft");
+                    }
+                }
+                if (args.length == 1) {
+                    if (p.hasPermission("poc.reload") && p.isOp()){
+                    if (args[0].equalsIgnoreCase("reload")) {
+
+                        Plugin plugin = p.getServer().getPluginManager().getPlugin("printocraft");
+                        p.getServer().getPluginManager().disablePlugin(plugin);
+                        p.getServer().getPluginManager().enablePlugin(plugin);
+                        p.sendMessage(ChatColor.DARK_GREEN+"[Serveur]"+ChatColor.DARK_RED+"Print O' Craft reloaded successful");
+
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+        return false;
+>>>>>>> 55c1816c70a9e4f19a599a7042f793c02dbc646b
+>>>>>>> d5e2d65866c39fbd714d575a491806d7549a16d5
     }
 }
