@@ -1,0 +1,9 @@
+name: printocraft
+version: 0.2
+author: mrstandu33
+depend: [WorldEdit]
+main: fr.mrstandu33.printocraft.printocraft
+commands:
+  poc:
+    desciption: Recharge le plugin
+    permission: poc.reload
