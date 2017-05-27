@@ -7,4 +7,3 @@ commands:
   poc:
     desciption: Recharge le plugin
     permission: poc.reload
-    usage: /poc reload
