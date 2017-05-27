@@ -7,8 +7,11 @@ import java.io.File;
 import java.io.IOException;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+<<<<<<< HEAD
 import fr.mrstandu33.printocraft.SqlConnection;
 import fr.mrstandu33.printocraft.Commands;
+=======
+>>>>>>> 55c1816c70a9e4f19a599a7042f793c02dbc646b
 
 import com.sk89q.worldedit.CuboidClipboard;
 import com.sk89q.worldedit.EditSession;
@@ -40,7 +43,7 @@ public class printocraft extends JavaPlugin implements Listener
     public static final String ANSI_WHITE = "\u001B[37m";
 
 	private LocalWorld localWorld;
-    
+
 	//___________________________________________________________________________________________________
 	public void onEnable()
 	{
@@ -74,8 +77,13 @@ public class printocraft extends JavaPlugin implements Listener
 		if (sql.isSchem())
 		{
 			System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN +  " O'" + ANSI_GREEN +  " Craft" + ANSI_RESET + "] A schematic have to be created, starting initialisation and creation !");
+<<<<<<< HEAD
 			this.bukkitWorld = getServer().getWorld(sql.Worldquery());
 			WorldEdit.getInstance();
+=======
+			this.bukkitWorld = Bukkit.getWorld("world");
+            WorldEdit.getInstance();
+>>>>>>> 55c1816c70a9e4f19a599a7042f793c02dbc646b
 			this.localWorld = BukkitUtil.getLocalWorld(bukkitWorld);
 	    	try
 	    	{	
