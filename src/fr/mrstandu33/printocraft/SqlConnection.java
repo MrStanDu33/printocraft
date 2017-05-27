@@ -127,4 +127,40 @@ public class SqlConnection {
 			return null;
 		}
 	}
+	
+	public String Worldquery()
+	{
+		try
+		{ 
+			String world;
+			PreparedStatement q = connection.prepareStatement("SELECT * FROM Test WHERE Etatschem = 0");
+			ResultSet res = q.executeQuery();
+			while (res.next())
+		      {
+				world = res.getString("World");
+				q.close();
+				return world;
+		      }
+			return null;
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public void Schemdone()
+	{
+		try
+		{
+			PreparedStatement q = connection.prepareStatement("UPDATE Test SET Etatschem = 1 WHERE Etatschem = 0");
+			q.executeUpdate();
+			q.close();
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }
