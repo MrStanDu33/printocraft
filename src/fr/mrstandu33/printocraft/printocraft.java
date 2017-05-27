@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import fr.mrstandu33.printocraft.SqlConnection;
+import fr.mrstandu33.printocraft.Commands;
 
 import com.sk89q.worldedit.CuboidClipboard;
 import com.sk89q.worldedit.EditSession;
@@ -73,7 +74,7 @@ public class printocraft extends JavaPlugin implements Listener
 		if (sql.isSchem())
 		{
 			System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN +  " O'" + ANSI_GREEN +  " Craft" + ANSI_RESET + "] A schematic have to be created, starting initialisation and creation !");
-			this.bukkitWorld = Bukkit.getWorld("world");;
+			this.bukkitWorld = getServer().getWorld(sql.Worldquery());
 			WorldEdit.getInstance();
 			this.localWorld = BukkitUtil.getLocalWorld(bukkitWorld);
 	    	try
@@ -93,6 +94,7 @@ public class printocraft extends JavaPlugin implements Listener
 	            if (schematic.exists())
 	            {
 			    	System.out.println("[" + ANSI_RED +  "Print" + ANSI_CYAN +  " O'" + ANSI_GREEN +  " Craft" + ANSI_RESET + "]Schematic n◦" + sql.IDquery() + " successfully created !");
+			    	sql.Schemdone();
 	            }
 	      }
 	      catch (IOException | DataException ex)
